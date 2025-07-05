@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -38,3 +39,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 =======
 # octarise
 >>>>>>> 0eb39f81bc4a121f6f02ae7f21a7f5e351ea2b9e
+=======
+
+>>>>>>> 9d1f2a53e70645e76704cfa5fc48342321c5cdcf
