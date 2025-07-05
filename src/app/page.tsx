@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState } from "react";
 
 export default function Home() {
@@ -13,14 +13,16 @@ export default function Home() {
   });
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
     e.preventDefault();
     setStatus("Sending...");
     try {
@@ -65,29 +67,31 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between gap-20 text-gray-200">
             <div className="flex-1 min-w-0 space-y-6 text-left pr-8 border-r border-purple-500">
               <p className="text-2xl leading-relaxed">
-                "Innovating software and orchestrating unforgettable events — for dreams
+                &quot;Innovating software and orchestrating unforgettable events — for dreams
                 that reach beyond the stars. We combine technology with creativity to
-                deliver experiences that truly inspire."
+                deliver experiences that truly inspire.&quot;
               </p>
             </div>
             <div className="flex-1 min-w-0 space-y-8 text-left px-8 border-r border-purple-500">
               <p className="text-2xl leading-relaxed">
-                "Crafting exquisite digital experiences — from personal portfolios that
+                &quot;Crafting exquisite digital experiences — from personal portfolios that
                 illuminate student talent, to robust commercial websites that elevate
-                your brand presence with style and functionality."
+                your brand presence with style and functionality.&quot;
               </p>
+
               <p className="text-xl font-semibold italic text-purple-400">
                 “Good design is obvious. Great design is transparent.”
               </p>
             </div>
             <div className="flex-1 min-w-0 space-y-6 text-left pl-8">
               <p className="text-2xl leading-relaxed">
-                "Meticulously curating intimate parties and joyous celebrations, where
+                &quot;Meticulously curating intimate parties and joyous celebrations, where
                 every detail is thoughtfully crafted to linger in hearts long after the
-                last light fades."
+                last light fades.&quot;
               </p>
+
               <p className="text-xl font-semibold italic text-purple-400">
-                “We don’t just plan events; we craft memories.”
+                &ldquo;We don&rsquo;t just plan events; we craft memories.&rdquo;
               </p>
             </div>
           </div>
@@ -242,7 +246,7 @@ export default function Home() {
             <textarea
               name="message"
               placeholder="Message"
-              rows="4"
+              rows={4}
               value={formData.message}
               onChange={handleChange}
               required

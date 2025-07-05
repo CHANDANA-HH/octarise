@@ -1,28 +1,21 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, MongoClientOptions } from "mongodb";
 
-const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
-const options = {};
+const uri = process.env.MONGODB_URI as string;
+const options: MongoClientOptions = {};
 
-let client;
-let clientPromise: Promise<MongoClient>;
-console.log("Connecting to:", process.env.MONGODB_URI);
-
-
-if (!process.env.MONGODB_URI) {
-  console.warn("⚠️ No MONGODB_URI environment variable set.");
+// For Next.js hot reload in development
+declare global {
+  // eslint-disable-next-line no-var
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 
-if (process.env.NODE_ENV === "development") {
-  // In dev, use a global var to preserve connection across reloads
-  if (!(global as any)._mongoClientPromise) {
-    client = new MongoClient(uri, options);
-    (global as any)._mongoClientPromise = client.connect();
-  }
-  clientPromise = (global as any)._mongoClientPromise;
-} else {
-  // In prod, just create once
+let client: MongoClient;
+
+if (!global._mongoClientPromise) {
   client = new MongoClient(uri, options);
-  clientPromise = client.connect();
+  global._mongoClientPromise = client.connect();
 }
+
+const clientPromise = global._mongoClientPromise;
 
 export default clientPromise;
