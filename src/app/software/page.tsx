@@ -14,7 +14,7 @@ export default function Software() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src="/software1_bg.mp4" type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dagqggf4w/video/upload/v1751797552/software1_bg_snfuec.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
 

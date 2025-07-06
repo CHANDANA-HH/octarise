@@ -13,7 +13,7 @@ export default function Events() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover object-center"
                 >
-                    <source src="/events_bg.mp4" type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dagqggf4w/video/upload/v1751797509/events_bg_sokfvt.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
 

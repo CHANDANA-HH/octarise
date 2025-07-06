@@ -54,7 +54,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover object-center"
         >
-          <source src="/bg_video.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dagqggf4w/video/upload/v1751797849/bg_video_ccenrt.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
@@ -155,7 +155,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/services_bg.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dagqggf4w/video/upload/v1751797629/services_bg_injt9g.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
